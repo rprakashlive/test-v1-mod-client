@@ -1,0 +1,48 @@
+<!-- <p>
+
+</p>
+<div class="col-12">
+<label *ngIf="name">Text you entered : {{ name }}</label>
+</div>
+<p *ngIf="name">{{dataChanged(name)}}</p>
+ -->
+
+ <!-- 
+<div>
+  <button class="btn btn-md" (click)="openModal()">open my modal</button>
+  <modal #myModal >
+      <modal-header>
+          <h1>Modal header</h1>
+      </modal-header>
+      <modal-content>
+       
+          <form [formGroup]="sampleForm" novalidate>
+            <div  class="form-group"> <label>Name :</label>
+          <input type="text" class="form-control" formControlName="first_name" [(ngModel)]="user.first_name">
+        </div>
+        <div *ngIf="sampleForm.controls['first_name'].invalid && (sampleForm.controls['first_name'].dirty || sampleForm.controls['first_name'].touched)" class="alert alert-danger">
+          <div *ngIf="sampleForm.controls['first_name'].errors.required">
+            First Name is required.
+          </div>
+      </div>
+      <div  class="form-group"> <label>Email :</label>
+        <input type="text" class="form-control" formControlName="email" [(ngModel)]="user.email">
+      </div>
+      <div *ngIf="sampleForm.controls['email'].invalid && (sampleForm.controls['email'].dirty || sampleForm.controls['email'].touched)" class="alert alert-danger">
+        <div *ngIf="sampleForm.controls['email'].errors.required">
+          Email is required.
+        </div>
+    </div>
+        </form>
+        
+        <h2>Input Details</h2>
+        <p>First name : {{user.first_name}}</p>
+        <p>Email : {{user.email}}</p>
+
+      </modal-content>
+      <modal-footer>
+          <button class="btn btn-primary" (click)="closeModal()">Close</button>
+          <button  [disabled]="sampleForm.pristine || sampleForm.invalid" class="btn btn-success ml-3" (click)="submitModalData(user)">Submit</button>
+      </modal-footer>
+  </modal>
+</div> -->

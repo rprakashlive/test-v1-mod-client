@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+  <meta charset="utf-8">
+  <title>CustomElementV1</title>
+  <!-- <base href="/"> -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+  <label for="fname">Enter the text : </label><br>
+  <input class="form-control col-4" type="text" id="fname" name="fname" ><br>
+  <button class="btn btn-success" id="btnProceed">Proceed</button>
+  <app-product></app-product>
+  <label id="submitResult"></label><br>
+
+  <div class="col-12">
+  <div class="card">
+    <div class="card-header">
+      Manage User
+    </div>
+    <div class="card-body">
+      <div class="col-12 row">
+        <div class="col-6">
+          <app-personal-detail></app-personal-detail>
+        </div>
+        <div class="col-6">
+          <app-contact-detail></app-contact-detail>
+        </div>
+      </div>
+      <div class="col-12 mb-4 mt-5 text-center">
+      <button class="btn btn-info" id="btnShowUser">View User</button>
+      <button class="btn btn-success" id="btnAddUser">Add User</button>   
+    </div>
+    </div>
+  </div>
+</div>
+  
+  
+   
+   
+
+  <script>
+     window.addEventListener('load', () => {  
+      const appForm = document.querySelector('app-product');
+      console.log("appForm",appForm);
+      const btnAttr = document.getElementById('btnProceed');
+      btnAttr.addEventListener('click', (event) => {
+       appForm.setAttribute('name', document.getElementById("fname").value);
+     });
+      appForm.addEventListener('display', (event) => {
+        document.getElementById('submitResult').textContent = event.detail;
+      });
+
+      const appPersonalForm = document.querySelector('app-personal-detail');
+      const btnAttrAddUser = document.getElementById('btnAddUser');
+      btnAttrAddUser.addEventListener('click', (event) => {
+        appPersonalForm.setAttribute('trigger', 'ADD');
+     });
+     const btnAttrShowUser = document.getElementById('btnShowUser');
+     btnAttrShowUser.addEventListener('click', (event) => {
+        appPersonalForm.setAttribute('trigger', 'VIEW');
+     });
+
+     appPersonalForm.addEventListener('user_display', (event) => {
+       console.log("output print")
+      appPersonalForm.setAttribute('trigger', 'VIEW');
+      });
+
+     });
+  </script>
+</body>
+</html>

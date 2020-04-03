@@ -1,0 +1,35 @@
+<!-- <div class="col-12">
+    Contact Details
+    <div class="col-8 mt-1">
+    <input type="text" placeholder="Email" class="form-control" name="email" [(ngModel)]="user.email" (blur)="submitModalData(user)">
+    </div>
+    <div class="col-8 mt-2">
+    <input type="text" placeholder="Mobile" class="form-control" name="phone" [(ngModel)]="user.phone" (blur)="submitModalData(user)">
+    </div>
+</div> -->
+
+
+<div class="col-12">
+    <form [formGroup]="sampleForm" novalidate>
+        Contact Details
+      <div class="col-8 mt-1">
+      <input type="text" placeholder="Email" class="form-control mb-2" formControlName="email" [(ngModel)]="user.email" (blur)="submitModalData(user)">
+      <div class="mb-3" *ngIf="sampleForm.controls['email'].invalid && (sampleForm.controls['email'].dirty || sampleForm.controls['email'].touched)" class="alert alert-danger">
+        <div *ngIf="sampleForm.controls['email'].errors.required">
+           Email is required.
+        </div>
+        </div>
+    </div>
+    
+      <div class="col-8 mt-2">
+      <input type="text" placeholder="Phone" class="form-control mb-2" formControlName="phone" [(ngModel)]="user.phone" (blur)="submitModalData(user)">
+      <div class="mb-3" *ngIf="sampleForm.controls['phone'].invalid && (sampleForm.controls['phone'].dirty || sampleForm.controls['phone'].touched)" class="alert alert-danger">
+        <div *ngIf="sampleForm.controls['phone'].errors.required">
+            Phone is required.
+        </div>
+    </div>
+    </div>
+      
+    </form>
+  </div>
+  

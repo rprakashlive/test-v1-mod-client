@@ -1,0 +1,43 @@
+<div class="col-12">
+  <form [formGroup]="sampleForm" novalidate>
+    Personal Details
+    <div class="col-8 mt-1">
+    <input type="text" placeholder="Name" class="form-control mb-2" formControlName="name" [(ngModel)]="user.name" (blur)="submitModalData(user)">
+    <div class="mb-3" *ngIf="sampleForm.controls['name'].invalid && (sampleForm.controls['name'].dirty || sampleForm.controls['name'].touched)" class="alert alert-danger">
+      <div *ngIf="sampleForm.controls['name'].errors.required">
+        First Name is required.
+      </div>
+      </div>
+  </div>
+  
+    <div class="col-8 mt-2">
+    <input type="text" placeholder="Address" class="form-control mb-2" formControlName="address" [(ngModel)]="user.address" (blur)="submitModalData(user)">
+    <div class="mb-3" *ngIf="sampleForm.controls['address'].invalid && (sampleForm.controls['address'].dirty || sampleForm.controls['address'].touched)" class="alert alert-danger">
+      <div *ngIf="sampleForm.controls['address'].errors.required">
+        address is required.
+      </div>
+  </div>
+  </div>
+    
+  </form>
+</div>
+
+
+
+<div>
+  <button class="btn btn-md" (click)="openModal()"></button>
+  <modal #myModal >
+      <modal-header>
+          <h1>User Details</h1>
+      </modal-header>
+      <modal-content>       
+        <p>Name : {{user.name}}</p>
+        <p>Address : {{user.address}}</p>
+        <p>address : {{user.address}}</p>
+        <p>Mobile : {{user.phone}}</p>
+      </modal-content>
+      <modal-footer>
+          <button class="btn btn-primary" (click)="closeModal()">Close</button>
+      </modal-footer>
+  </modal>
+</div>

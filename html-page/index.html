@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Using Angular Element Demo</title>
+</head>
+<body>
+    <body>
+        <script src="sample-element.js"></script>
+        <script src="styles.css"></script>
+      <div class="col-12">
+        <label for="fname">Enter the text : </label><br>
+      <input type="text" class="form-control col-4" id="fname" name="fname" ><br>
+      <button class="btn btn-success" id="btnProceed">Proceed</button>
+      <app-product></app-product>
+      <label id="submitResult"></label><br>
+    </div>
+      <script>
+         window.addEventListener('load', () => {
+          const appForm = document.querySelector('app-product');
+          console.log('appForm',appForm);
+          const btnAttr = document.getElementById('btnProceed');
+          btnAttr.addEventListener('click', (event) => {
+              console.log("test", event);
+           appForm.setAttribute('name', document.getElementById("fname").value);
+         });
+         appForm.addEventListener('display', (event) => {
+            document.getElementById('submitResult').textContent = event.detail;
+          });
+         });
+      </script>
+    </body>
+</body>
+</html>
