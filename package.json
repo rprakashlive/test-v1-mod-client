@@ -35,7 +35,7 @@
     "custom-event-polyfill": "^1.0.7",
     "fs-extra": "^9.0.0",
     "install": "^0.13.0",
-    "jquery": "^3.4.1",
+    "jquery": "^3.5.0",
     "less": "^3.11.1",
     "ng6-toastr-notifications": "^1.0.4",
     "ngb-modal": "^2.0.3",
